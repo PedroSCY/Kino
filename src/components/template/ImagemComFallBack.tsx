@@ -38,6 +38,7 @@ export default function ImagemComFallback({
 			src={url}
 			className={cn("object-cover", className)}
 			sizes="80vw"
+			priority
 		/>
 	);
 }

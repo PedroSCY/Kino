@@ -1,17 +1,24 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-
-  async redirects(){
+  async redirects() {
     return [
       {
-        source:"/",
-        destination:"/filmes",
-        permanent:true
-      }
-    ]
+        source: "/",
+        destination: "/filmes",
+        permanent: true,
+      },
+    ];
   },
-
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "image.tmdb.org",
+        port: "",
+      },
+    ],
+  },
   /* config options here */
   reactCompiler: true,
 };
