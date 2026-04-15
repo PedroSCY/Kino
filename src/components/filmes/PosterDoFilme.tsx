@@ -1,4 +1,3 @@
-import React from "react";
 import Wrap from "../template/Wrap";
 import ImagemComFallback from "../template/ImagemComFallBack";
 import { IconMovie } from "@tabler/icons-react";

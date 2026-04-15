@@ -1,6 +1,11 @@
+import { IconVideo } from "@tabler/icons-react";
 import Flex from "../template/Flex";
+import ImagemComFallback from "../template/ImagemComFallBack";
 import Titulo from "../template/Titulo";
 import Wrap from "../template/Wrap";
+import Generos from "./Generos";
+import Nota from "./Nota";
+import { cn } from "@/utils/cn";
 
 interface CardFilmeProps {
   filme: Filme;
@@ -10,10 +15,29 @@ interface CardFilmeProps {
 export default function CardFilme({ filme, className }: CardFilmeProps) {
   return (
     <Wrap
-      className={`rounded-2xl h-60 max-h-60 bg-black border border-white/20 group-hover:border-red-kino relative z-20`}
+      className={cn(
+        `rounded-2xl h-60 max-h-60 bg-black border border-white/20 group-hover:border-red-kino relative z-20`,
+        className,
+      )}
     >
+      <ImagemComFallback
+        url={filme.linkImagemFundo}
+        imgAlt={`Imagem de fonto do filme ${filme.titulo}`}
+        className="opacity-40 group-hover:opacity-15 transition-all"
+      >
+        <IconVideo className="w-1/2 h-2/3 transition-all text-slate-800" />
+      </ImagemComFallback>
       <Flex col className="h-60 z-50 justify-between py-10 px-2">
-        <Titulo texto={filme.titulo} pequeno alinhar="left" />
+        <Titulo
+          texto={filme.titulo}
+          pequeno
+          alinhar="left"
+          className="m-auto"
+        />
+        <Flex col className="justify-start items-start w-full">
+          <Generos idFilme={filme.id} />
+          <Nota nota={filme.nota} />
+        </Flex>
       </Flex>
     </Wrap>
   );

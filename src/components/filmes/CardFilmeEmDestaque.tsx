@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../template/Container";
 import Flex from "../template/Flex";
 import Titulo from "../template/Titulo";
