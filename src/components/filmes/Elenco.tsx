@@ -49,7 +49,7 @@ export default function Elenco({ elenco }: ElencoProps) {
   return (
     <Container className="pb-0 pt-10">
       <Titulo texto="Elenco" className="mb-4" alinhar="center" />
-      <Flex className="flex wrap mt-14">
+      <Flex className="flex-wrap mt-14">
         {elenco.map((ator, index) => (
           <Link href={`/ator/${ator.id}`} key={ator.id}>
             <div
@@ -91,6 +91,7 @@ export default function Elenco({ elenco }: ElencoProps) {
               </AnimatePresence>
               <div
                 className={`h-24 w-24 rounded-full border-2 border-white relative transition duration-500 group-hover:scale-105 group-hover:z-30`}
+                onMouseMove={handleMouseMove}
               >
                 <ImagemComFallback
                   url={ator.imagemPerfil}

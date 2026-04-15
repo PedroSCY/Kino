@@ -33,7 +33,7 @@ function BottaoLateral(props: {
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
       className={cn(
-        `goup absolute top-0 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none`,
+        `goup absolute top-0 flex lg:h-full h-1/2 cursor-pointer items-center justify-center px-4 focus:outline-none`,
         { "left-0": props.esquerda, "right-0": props.direita },
       )}
     >

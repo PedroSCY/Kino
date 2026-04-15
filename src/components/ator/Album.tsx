@@ -48,7 +48,7 @@ export default async function Album({ idAtor }: AlbumProps) {
                       <Image
                         src={linkImagem}
                         alt="imagem do ator"
-                        className="object-contain"
+                        className="object-cover"
                         sizes="40vw"
                         fill
                         priority
